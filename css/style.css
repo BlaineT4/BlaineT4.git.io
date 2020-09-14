@@ -1,0 +1,665 @@
+/* Global Styles */
+
+* {
+    /* outline: solid red 1px !important; */
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", "Helvetica", sans-serif;
+    background-color: #eee;
+}
+
+a {
+    color: #000;
+}
+
+h2, h3, h4 {
+    font-size: 16px;
+
+}
+
+.container {
+    /* overflow: hidden; */
+    margin: auto;
+    width: 80%;
+}
+
+.container-100 {
+    width: 100%;
+}
+
+.selected {
+    background-color: #ddd;
+    /* filter: invert(75%) */
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.break {
+    border: 1px solid #fff;
+    margin-top: 25px 
+}
+
+/* Header Section */
+
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.header ul a {
+    display: block;
+    padding: 20px;
+    font-weight: 300;
+    /* border-right: 1px solid #aaa; */
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    transition:
+    transform 250ms ease-in-out;
+
+}
+
+.header ul a:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+    filter: invert(95%);
+}
+
+
+
+.header .logo {
+    float: left;
+    display: block;
+    font-size: 3em;
+    padding: 7.85px 20px;
+    filter: invert(100%);
+    opacity: 0.8;
+    width: 1em;
+    transition:
+    transform 50ms ease-in;
+    
+}
+
+.header .logo:hover {
+    filter: invert(0%);
+    transition: all 250ms ease-in;
+    transform: scale(1.1);
+    
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    /* outline: solid red; */
+    padding: 30.85px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: #333;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon::before {
+    background: #333;
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon::after {
+    background: #333;
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+/* BELOW - When .menu-btn is in checked state, look for next available sibling that has a class of .menu and change its height to 240px */
+.header .menu-btn:checked ~ .menu{
+    max-height: 381.4px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/* Buffer Section */
+
+.buffer {
+    height: 63.7px;
+}
+
+/* Banner Section */
+
+.main-section {
+
+}
+
+.banner-wrapper: {
+    position: relative;
+}
+
+.banner-wrapper .band-photo {
+    width: 100%;
+    /* clear: none;
+    position: absolute;
+    top: 71.5px; */
+    display: block;
+}
+
+
+/* Signup Sidebar Section */
+
+.mail-list {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px 20px;
+    box-sizing: border-box; 
+    text-transform: uppercase;
+}
+
+.sidebar-container {
+    display: block;
+    text-align: center;
+    width: 80%;
+}
+
+.mail-header {
+    text-align: center;
+    padding: 5px;
+
+}
+
+.placeholder-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px #808080 solid;
+}
+
+.signup {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    margin: 5px auto;
+    text-transform: uppercase;
+    background-color: #707070;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition:
+    transform 250ms ease-in-out;
+}
+
+.signup:hover {
+    transform: scale(1.05);
+    filter: opacity(75%);
+    
+}
+
+.mail-list p {
+    font-size: 0.5em;
+}
+
+/*
+.sidebar-container {
+    float: none;
+    text-align: center;
+    background-color: #eee;
+    width: 80%;
+    margin: auto;
+    
+    
+}
+
+.mail-header {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px;
+    float: left;
+    width: 30%;
+    box-sizing: border-box;
+    font-size; 0.8em;
+}
+
+.placeholder-box {
+    float: right;
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.sidebar-container p {
+    font-size: 0.7em;
+    width: 100%;
+    text-align: center;
+}
+
+.sign-up {
+    clear: both;
+    background-color: black;
+} */
+
+
+/* Social Media Section */
+
+.social-media {
+    /* background-color: #eee; */
+    text-align: center;
+    margin: 5px;    
+}
+
+.social-heading {
+    /* display: none;
+    text-align: left; */
+    padding-top: 15px;
+}
+
+.icon {
+    /* box-sizing: content-box; */
+    text-align: center;
+    width: 14%;
+    padding: 0 9px;
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition:
+    transform 250ms ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    filter: invert(50%)
+}
+
+/* Bio Section */
+
+.bio-wrapper {
+    /* position: relative; */
+    padding: 10px 0;
+    /* background-color: #ddd; */
+    /* display: block; */
+
+   
+}
+
+.bio-wrapper .bio {
+    /* text-align: center; */
+    clear: left;
+}
+
+.bio h3 {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 15px 0 5px 0;
+}
+
+.bio p {
+    padding: 10px 0;
+}
+
+
+/* Releases Section */
+
+.releases {
+    text-align: center;
+    padding-bottom: 20px;
+    background-color: #eee;
+}
+
+.release-head {
+    font-size: 1.8em;
+    padding-top: 20px;
+    text-align: center;
+
+}
+
+.mob-view-sub {
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 300;
+}
+
+.release-sub {
+    margin-top: 20px;
+    font-style: italic;
+    margin: 20px;
+    /* float: left; */
+
+}
+
+.releases p {
+    clear: left;
+    text-align: left;
+    padding: 10px;
+}
+
+.heroics-art {
+    width: 80%;
+    float: none;
+    margin: 40px 0 0 0;
+    box-shadow: 0px 0px 4px 0 rgba(0,0,0,0.1);
+    /* transition:
+    transform 250ms ease-in-out; */
+}
+
+.heroics-art:hover {
+    transform: scale(1.02);
+}
+
+.hide {
+    display: none;
+}
+
+.rev-hide {
+    /* display: initial; */
+}
+
+
+/* Touring Section */
+
+.tour-head {
+    font-size: 1.4em;
+    text-align: center;
+    padding: 30px 0 20px 0;
+}
+
+.touring h3 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 300;
+    padding-top: 30px;
+}
+
+.dates {
+    height: 600px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Footer Section */
+
+/* footer {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+    margin: auto;
+}
+
+footer p {
+   
+} */
+
+.footer {
+    /* position: absolute; */
+
+    bottom: 0;
+    width: 100%;
+    /* height: 50px;     */
+    background-color: #fff;
+    text-transform: uppercase;
+    text-align: center; 
+    /* padding: 10px 0; */
+}
+
+.footer .copyright {
+    padding: 10px 0 5px 0;
+    font-size: 0.9em;
+}
+
+.footer .privacy {
+    font-size: 0.6em;
+    padding: 5px 0 10px 0;
+
+}
+
+
+
+
+
+
+
+/* Media Queries */
+
+/* 720px Width */
+@media (min-width: 45em) {
+    
+/* Header MQ */
+
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 16.25px 26px;
+    }
+
+    .header .menu{
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+
+/* Banner MQ */
+
+    .banner-wrapper {
+        width: 62.6%;
+        float: left;
+    }
+
+
+/* Mailing List MQ */
+
+ .mail-list {
+     width: 37.4%;
+     float: right;
+     padding: 60px 0 0 0;
+     /* overflow: auto; */
+ }
+
+ .mail-header {
+     font-size: 1em;
+     margin-bottom: 5px;
+     text-align: left;
+     padding: 0;
+ }
+
+ .mail-list p {
+     font-size: 0.4em;
+     text-align: left;
+     padding: 5px 15px 5px 1px;
+     /* float: left; */
+ }
+
+ .placeholder-box {
+     width: 100%;
+ }
+
+ .sidebar-container {
+     margin-top: 0px;
+ }
+
+
+ /* Social Media Section MQ */
+
+ .social-media {
+     display: inline;
+     /* float: right; */
+     width: 37.4%;
+     
+ }
+
+ .social-heading {
+     display: initial;
+     text-align: left;
+ }
+
+ .social-heading h3 {
+    margin-bottom: 5px;
+ }
+
+ .signup {
+    width: 28%;
+    padding: 7px 0;
+    float: right;
+}
+
+ .icon {
+     width: 14%;
+     padding: 0 7px 0 0;
+     margin: 5px 3px 0 0;
+     /* float: left; */
+ }
+
+
+ /* Bio Section MQ */
+
+ .bio h3 {
+     /* background-color: #f8f8f8; */
+     text-align: left;
+     padding-top: 40px;
+     font-size: 1.8em;
+ }
+
+ .bio {
+     padding-bottom: 30px;
+
+ }
+
+
+ /* Releases Section MQ */
+
+ .release-head {
+     font-size: 2.5em;
+     text-align: left;
+     padding-top: 40px;
+ }
+
+ .release-sub {
+     text-align: left;
+     margin-left: 0;
+     font-size: 1.2em;
+ }
+
+ .releases p {
+     padding-left: 0;
+ }
+
+ .hide {
+     display: initial;
+     font-weight: 300;
+ }
+
+ .heroics-art {
+     width: 35%;
+     margin: 40px 0 20px 10px;
+     float: right;
+ }
+
+ .mob-view-sub {
+     text-align: center;
+ }
+
+
+
+ .tour-head {
+    font-size: 1.4em;
+    text-align: left;
+}
+
+ .touring h3 {
+    
+    font-size: 1.8em;
+}
+
+}
+
+/* Utility CSS */
+
+.rev-hide {
+    display: none;
+}
+
+
+/* 520px Width */
+
+@media (max-width: 32.5em) {
+    .icon {
+        padding: 0 8px 0 0;
+    }
+}
+
+/* 960px Width */
+@media (min-width: 60em) {
+    .mail-list {
+        padding: 30px 0 0 0;
+    }
+    
+    .mail-list p {
+        font-size: 0.5em;
+    }
+}
